@@ -5,7 +5,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+//static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+//static int borderpx = 2;
+
+static char *font = "Inconsolata for Powerline:pixelsize=14:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -43,7 +46,7 @@ int allowaltscreen = 1;
 
 /* frames per second st should at maximum draw to the screen */
 static unsigned int xfps = 120;
-static unsigned int actionfps = 30;
+static unsigned int actionfps = 120;
 
 /*
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
@@ -63,7 +66,7 @@ static unsigned int cursorthickness = 2;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st-256color";
+char *termname = "xterm-256color";
 
 /*
  * spaces per tab
@@ -80,46 +83,86 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 8;
+unsigned int tabspaces = 4;
+
+/* Terminal colors (16 first used in escape sequence) */
+//static const char *colorname[] = {
+//	/* 8 normal colors */
+//	"black",
+//	"red3",
+//	"green3",
+//	"yellow3",
+//	"blue2",
+//	"magenta3",
+//	"cyan3",
+//	"gray90",
+//
+//	/* 8 bright colors */
+//	"gray50",
+//	"red",
+//	"green",
+//	"yellow",
+//	"#5c5cff",
+//	"magenta",
+//	"cyan",
+//	"white",
+//
+//	[255] = 0,
+//
+//	/* more colors can be added after 255 to use with DefaultXX */
+//	"#cccccc",
+//	"#555555",
+//};
+
+/* gruvbox-dark colorscheme */
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
-
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
-
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+	"#cc241d",
+	"#98971a",
+	"#d79921",
+	"#458588",
+	"#b16286",
+	"#689d6a",
+	"#a89984",
+	"#928374",
+	"#fb4934",
+	"#b8bb26",
+	"#fabd2f",
+	"#83a598",
+	"#d3869b",
+	"#8ec07c",
+	"#ebdbb2",
 };
 
-
+// Gruvbox light
+static const char *altcolorname[] = {
+	"#fbf1c7", /* hard contrast: #f9f5d7 / soft contrast: #f2e5bc */
+	"#cc241d",
+	"#98971a",
+	"#d79921",
+	"#458588",
+	"#b16286",
+	"#689d6a",
+	"#7c6f64",
+	"#928374",
+	"#9d0006",
+	"#79740e",
+	"#b57614",
+	"#076678",
+	"#8f3f71",
+	"#427b58",
+	"#3c3836",
+};
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
+unsigned int defaultfg = 15;
 unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+static unsigned int defaultcs = 15;
+static unsigned int defaultrcs = 15;
 
 /*
  * Default shape of cursor
